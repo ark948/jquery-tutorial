@@ -1,12 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="js/jquery-3.7.1.js"></script>
 </head>
+
 <body>
-    
+    <p class="my-p">paragraph 1</p>
+    <p class="my-p">paragraph 2</p>
+    <button id="hider">click to hide paragraphs</button>
+
+    <p id="p_hide">if you click, i will hide</p>
+    <p id="p_double_hide">if you double click, i will hide</p>
+    <p id="p3">come here to hide (disabled)</p>
+
+    <input id="my_input">focus on me to change my color</input>
+
+    <p id="p4">very interactive paragraph</p>
+    <script>
+
+        // very simple jquery example:
+        // when user clicks on button, all p elements will be hidden
+        $(document).ready(function () {
+            $("#hider").click(function () {
+                $(".my-p").hide();
+                console.log("all paragraphs were hid.");
+            });
+        });
+
+        $("#p_hide").click(function () {
+            $(this).hide();
+        });
+
+        $("#p_double_hide").dblclick(function () {
+            $(this).hide();
+        });
+
+        //$("#p3").mouseenter(function() {
+        //  console.log("hey");
+        //});
+
+        $("#my_input").focus(function () {
+            $(this).css("background-color", "#cccccc");
+            console.log("got focus");
+        });
+        $("#my_input").blur(function () {
+            $(this).css("background-color", "#ffffff");
+            console.log("left focus");
+        });
+
+        $("#p4").on({
+            mouseenter: function () {
+                $(this).css("background-color", "lightgray");
+            },
+            mouseleave: function () {
+                $(this).css("background-color", "lightblue");
+            },
+            click: function () {
+                $(this).css("background-color", "yellow");
+            }
+        });
+    </script>
 </body>
+
 </html>

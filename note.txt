@@ -1,0 +1,55 @@
+jquery is tailor-made for selecting html elements and performing some action on them
+
+basic syntax:
+    $(selector).action()
+
+Examples:
+$(this).hide() - hides the current element.
+$("p").hide() - hides all <p> elements.
+$(".test").hide() - hides all elements with class="test".
+$("#test").hide() - hides the element with id="test".
+
+$(document).ready(function(){
+
+  // jQuery methods go here...
+
+});
+
+most jquery codes follow this template
+this is to make sure the document is fully loaded
+
+to install jquery:
+  just download the js file (dev version)
+  (production version is minimized and compressed)
+
+there is a shorter version of it as well:
+$(function(){
+
+  // jQuery methods go here...
+
+});
+
+jquery selectors are based on css selector queries
+they all start with dollar sign and parentheses: $()
+
+
+to find an element with unique id (all ids must be unique in page):
+$("#test")
+
+
+to find elements with a certain class:
+$(".test")
+
+
+you can attach multiple event handlers to an element with on() method:
+$("p").on({
+  mouseenter: function(){
+    $(this).css("background-color", "lightgray");
+  },
+  mouseleave: function(){
+    $(this).css("background-color", "lightblue");
+  },
+  click: function(){
+    $(this).css("background-color", "yellow");
+  }
+});
