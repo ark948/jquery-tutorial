@@ -14,12 +14,22 @@
             $('#btn2').click(function() {
                 alert("HTML: " + $("#test").html());
             });
-        })
+            $('#get_val_button').click(function() {
+                alert("Value: " + $("#input_test").val());
+            });
+            $('#a_get_button').click(function() {
+                alert($("#a_get").attr("href"));
+            });
+        });
     </script>
 </head>
 
 <body>
     <p id="test">This is some <b>bold</b> text in a paragraph.</p>
+    <p>Name: <input type="text" id="input_test" value="Mickey Mouse"></p>
+    <button id="get_val_button">get value</button>
+    <a id="a_get" href="some_address">Get this address</a>
+    <button id="a_get_button">Get href attr</button>
 
     <button id="btn1">Show Text</button>
     <button id="btn2">Show HTML</button>
