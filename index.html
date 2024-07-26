@@ -6,6 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="js/jquery-3.7.1.js"></script>
+    <style>
+        #panel,
+        #flip {
+            padding: 10px;
+            text-align: center;
+            background-color: #e5eecc;
+            border: solid 1px #c3c3c3;
+        }
+
+        #panel {
+            padding: 50px;
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,14 +28,28 @@
     <button id="hider">click to hide paragraphs</button>
 
     <p id="p_hide">if you click, i will hide</p>
-    <p id="p_double_hide">if you double click, i will hide</p>
+    <p id="p_double_hide">if you double click, i will slowly hide</p>
     <p id="p3">come here to hide (disabled)</p>
 
     <input id="my_input">focus on me to change my color</input>
 
     <p id="p4">very interactive paragraph</p>
-    <script>
 
+    <p id="p5">i'm going to fade out</p>
+    <button id="p5_button">click to fade it</button>
+
+    <p id="p6">hello there.</p>
+    <button id="p6_button">click me to show to fade in a p</button>
+
+    <br>
+    <br>
+
+    <div id="flip">Click to slide down panel (already there)</div>
+    <div id="panel">Hello world! (this will appear)</div>
+
+    <p id="p_to_chain">this paragraph will demonstrate chaining</p>
+    <script>
+        "use strict";
         // very simple jquery example:
         // when user clicks on button, all p elements will be hidden
         $(document).ready(function () {
@@ -32,7 +60,8 @@
         });
 
         $("#p_hide").click(function () {
-            $(this).hide();
+            $(this).hide(500);
+            console.log("hide in 0.5 seconds.");
         });
 
         $("#p_double_hide").dblclick(function () {
@@ -63,6 +92,29 @@
                 $(this).css("background-color", "yellow");
             }
         });
+
+        $("#p5_button").click(function () {
+            $("#p5").fadeOut();
+            console.log("slowly fading out...");
+        });
+
+        $("#p6_button").click(function () {
+            $("#p6").fadeIn();
+            console.log("slowly fading in...");
+        });
+
+        $("#flip").click(function () {
+            $("#panel").slideToggle(function() {
+                console.log("flipped");
+            });
+        });
+
+        // jquery method chaining
+        $("#p_to_chain")
+            .css("color", "red")
+            .slideUp(500)
+            .slideDown(500);
+
     </script>
 </body>
 
