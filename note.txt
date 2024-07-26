@@ -53,3 +53,13 @@ $("p").on({
     $(this).css("background-color", "yellow");
   }
 });
+
+
+get DOM content with the following methods:
+  text() - sets or returns text content of element
+  html() - sets or returns the content of element with html markup
+  val() - sets or returns the value of form fields
+
+
+
+IMPORTANT: better code structure in get_content.html
