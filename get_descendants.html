@@ -9,9 +9,19 @@
         "use strict";
         $(document).ready(function() {
             // jquery goes here
+
+            // children() returns all direct children, traverses only ONE level down the DOM
             let elem = $('#my-div').children();
             console.log(elem[0].innerHTML);
             // elem[1] is span
+            // you can also specify class name e.g. p.first (the p tag with class 'first')
+
+            // find() returns all descendants, all the way down to last descendant
+            let elem2 = $('#my-div').find('span');
+            console.log(elem2[0]);
+
+            // $("div").find("*");
+            // returns all children of div
         });
     </script>
     <style>
@@ -23,6 +33,7 @@
     <div id="my-div">
         <p>child paragraph</p>
         <span>another child</span>
+        <span>second span child</span>
     </div>
     <p id="p1">a sample paragraph</p>
 </body>
