@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="js/jquery-3.7.1.js"></script>
+    <script>
+        /*
+        width() - set or return the width of element (exclude padding, border, margin)
+        height() - set or return the height of element (exclude padding, border, margin)
+        innerWidth() - same but includes padding
+        innerHeight() - same but includes padding
+        outerWidth() - same but includes padding and border
+        outerHeight() - same but includes padding and border
+        outerWidth(true) - returns width (includes padding, border, margin)
+        outerHeight(true) - returns height (inclues padding, border, margin)
+        */
+        $(document).ready(function () {
+            // setting height and width of element
+            $("button").click(function () {
+                $("#div1").width(500).height(500);
+            });
+            $('#back').click(function () {
+                $('#div1').width(300).height(100);
+            });
+        });
+    </script>
+    <style>
+        #div1 {
+            height: 100px;
+            width: 300px;
+            padding: 10px;
+            margin: 3px;
+            border: 1px solid blue;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <br>
+
+    <button>Resize div</button>
+    <button id='back'>back</button>
+</body>
+</html>
