@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.7.1.js"></script>
+    <script>
+        "use strict";
+        $(document).ready(function() {
+            // jquery goes here
+
+            // return css property (rgb value)
+            let p_css = $('p').css('background-color');
+            console.log(p_css);
+            console.log(typeof p_css); // string
+
+            // setting a css property
+            // multiple properties are also accepted
+            $('#btn1').click(function() {
+                $('#p1').css('color', 'yellow');
+                $('#p1').css({'font':'20px', 'background-color': 'gray'});
+                console.log("setting new css");
+            });
+        });
+    </script>
+    <style>
+        /* css rulesets */
+        #p1 {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <!-- this is jquery template -->
+    <p id="p1">a sample paragraph</p>
+    <button id="btn1">set the color</button>
+</body>
+</html>
