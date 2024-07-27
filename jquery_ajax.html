@@ -16,7 +16,21 @@
 
             // the following example, loads the content of demo_test.txt into a div
             $('#btn1').click(function() {
-                $('#div1').load('ajax_content/demo_test.txt');
+                $('#div1').load('ajax_content/demo_test.txt #p1');
+                // #p1 goes further and can be deleted (it is optional)
+            });
+
+            /*
+            responseTxt - contains the resulting content if the call succeeds
+            statusTxt - contains the status of the call
+            xhr - contains the XMLHttpRequest object
+            */
+
+            $('#btn2').click(function() {
+                $('#div2').load('ajax_content/demo_test.txt', function(responseTxt, statusTxt, xhr) {
+                    if (statusTxt == 'success') console.log("Good");
+                    if (statusTxt == 'error') console.log("Crap");
+                });
             });
         });
     </script>
@@ -30,5 +44,10 @@
 
     <div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
     <button id="btn1">Get External Content</button>
+
+    <br><br>
+
+    <div id="div2"><h2>Let jQuery AJAX Change This Text</h2></div>
+    <button id="btn2">Get External Content</button>
 </body>
 </html>
