@@ -63,3 +63,13 @@ get DOM content with the following methods:
 
 
 IMPORTANT: better code structure in get_content.html
+
+AJAX is a technology to manage content of the web page without reloading.
+AJAX can be done without jquery, but every browser has a bit different implementation of it, so it needs more work.
+
+'jquery ajax' solves this problem.
+
+
+for testing jquery axaj need some other files such as a demo_test.txt with the following content:
+  <h2>jQuery and AJAX is FUN!!!</h2>
+  <p id="p1">This is some text in a paragraph.</p>
