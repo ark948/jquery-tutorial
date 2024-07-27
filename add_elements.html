@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.7.1.js"></script>
+    <script>
+        "use strict";
+        $(document).ready(function() {
+            // jquery goes here
+            
+            // adds to the end of element
+            $('#p1').append("appending text to the end of this.");
+            //adds to the beginning of element
+            $('#p1').prepend("yo.");
+
+            // add an entire new element
+            let text1 = $('<p></p>').text('new element by jquery');
+            $("body").append(text1);
+            let text2 = document.createElement("p");
+            text2.innerHTML = "another one.";
+            $('body').append(text2);
+
+            // after() - before()
+            // insert content after or before selected element
+
+            // removing elements
+            // remove() - removes elements and its children
+            // empty() - removes the children of an element
+
+            // remove() takes one parameter to filter which to remove
+            $('#div1').empty();
+
+            // remove p elements with class test
+            $('p').remove('.test');
+        });
+    </script>
+</head>
+<body>
+    <!-- adding new html elements using jquery -->
+    <p id="p1">hey.</p>
+
+    hello.
+    <div id="div1">
+        this has a child no more
+        <p>This is a div with paragprah.</p>
+    </div>
+
+    <p class="test">also removed</p>
+</body>
+</html>

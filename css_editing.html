@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.7.1.js"></script>
+    <script>
+        "use strict";
+        $(document).ready(function () {
+            // addClass() add css class (existing class)
+            // removeClass() 
+            // toggleClass() - toggle between adding/removing
+            // css() - sets or returns style attribute
+
+            $('#add_btn').click(function() {
+                $('h1, h2, p').addClass("blue");
+                $('div').addClass("important");
+            });
+
+            $('#remove_btn').click(function() {
+                $('h1, h2, p').removeClass("blue");
+                $('div').removeClass("important");
+            });
+
+            $('#toggle_btn').click(function() {
+                $('#div2').toggleClass('blue');
+            });
+        });
+    </script>
+    <style>
+        .important {
+            font-weight: bold;
+            font-size: xx-large;
+        }
+
+        .blue {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+
+    <div>This is some important text!</div><br>
+
+    <div id="div2">Hey hello this is css</div>
+    <button id="add_btn">Add classes to elements</button>
+    <button id="remove_btn">Remove classes from elements</button>
+    <button id="toggle_btn">Toggle css</button>
+</body>
+</html>
