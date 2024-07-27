@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.7.1.js"></script>
+    <script>
+        "use strict";
+        $(document).ready(function() {
+            // jquery goes here
+
+            // $.get(URL,callback);
+            // get() method to request data from server
+
+            // i'm not sure if this works with txt file i have in my ajax_content folder in project directory
+            $('#btn1').click(function() {
+                $.get("ajax_content/demo_test.txt", function(data, status) {
+                    console.log("Data: " + data + "Status: " + status);
+                });
+            });
+
+            // result: IT WORKS!!! :)
+            // ok, but pretty sure POST won't work. need some sort of server to process the psot request and respond
+        });
+    </script>
+    <style>
+        /* css rulesets */
+    </style>
+</head>
+<body>
+    <!-- this is jquery template -->
+    <p id="p1">a sample paragraph</p>
+
+    <br>
+    <button id="btn1">Send an HTTP GET request to a page and get the result back</button>
+</body>
+</html>
