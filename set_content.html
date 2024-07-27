@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function() {
+            // set text of p1
+            $('#button1').click(function() {
+                $('#p1').text("text has been set.");
+            });
+            // set html of p2
+            $('#button2').click(function() {
+                $('#p2').html("<b>a bold content</b>");
+            });
+            // set value of input1
+            $('#button3').click(function() {
+                $('#input1').val('new value');
+            });
+
+            // i is index, i don't know of what ?
+            $('#button4').click(function() {
+                $('#p3').text(function(i, orgitext) {
+                    return 'something new';
+                });
+            });
+
+            // update href attr
+            // NOT WORKING
+            $('#button4').click(function() {
+                $('#anchor1').text("new url");
+            });
+        });
+    </script>
+</head>
+<body>
+    <p id="p1">A paragraph</p>
+    <p id="p2">Another paragraph</p>
+    <br>
+    <input type="text" id="input1" value="old value">
+
+    <p id="p3">paragraph text</p>
+    <br>
+    <button id="button4"> set </button>
+
+    <button id="button1">set text</button>
+    <button id="button2">set html</button>
+    <button id="button3">set value</button>
+
+    <br>
+    <a id="anchor1" href="old">to old address</a>
+    <button id="button4">update href</button>
+
+    <script>
+        $(document).ready(function() {
+            $('#btn5').click(function() {
+                $('#input2').attr('value', function(i, orgiValue) {
+                    console.log("Setting new value...");
+                    return "New Value";
+                });        
+            })
+        })
+    </script>
+    <br><br>
+    <p>This is the deal:></p>
+    <input type="text" id="input2" value="old value">
+    <button id="btn5">update value</button>
+    
+</body>
+</html>
