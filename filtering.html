@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.7.1.js"></script>
+    <script>
+        "use strict";
+        $(document).ready(function () {
+            // jquery goes here
+
+            // first() - returns first element of element
+            let elem_div1_first = $('#div1').first();
+            // console.log(elem_div1_first);
+            // last() - returns the last element of element
+            // let elem_div1_last = $("div").last();
+
+            // filter() - provides the use of criteria
+            let some_p = $("p").filter(".intro");
+            console.log(some_p[0].innerText);
+
+        });
+    </script>
+    <style>
+        /* css rulesets */
+    </style>
+</head>
+<body>
+    <!-- this is jquery template -->
+    <p id="p1">a sample paragraph</p>
+    <h1>Welcome to My Homepage</h1>
+
+    <p>This is a paragraph.</p>
+
+    <div id="div1" style="border: 1px solid black;">
+        <p>A paragraph in a div.</p>
+        <p>Another paragraph in a div.</p>
+    </div>
+    <br>
+
+    <div id="div2" style="border: 1px solid black;">
+        <p class="intro">A paragraph in another div.</p>
+        <p>Another paragraph in another div.</p>
+    </div>
+    <br>
+
+    <div id="div3" style="border: 1px solid black;">
+        <p>A paragraph in another div.</p>
+        <p>Another paragraph in another div.</p>
+    </div>
+</body>
+</html>
